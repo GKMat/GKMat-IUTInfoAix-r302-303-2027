@@ -1,0 +1,31 @@
+left to right direction
+actor Voyageur as v
+actor "Machine centrale" as mc
+
+rectangle SysDistributeur {
+  usecase "Acheter un billet" as ab
+  usecase "Choisir le type" as ct
+  usecase "Payer" as p
+  usecase "Imprimer" as im
+  usecase "Billet aller simple" as bas
+  usecase "Abonnement hebdomadaire" as ah
+  usecase "Abonnement mensuel" as am
+  usecase "Délai d'attente dépassé" as dd
+  usecase "Annuler la transaction" as at
+  usecase "Plus de papier" as pp
+  usecase "Mettre à jour les tarifs" as maj
+  usecase "Gerer erreur" as ge
+}
+v---->ab
+ab-[dashed]->ct :<<include>>
+ab-[dashed]->p :<<include>>
+ab-[dashed]->im :<<include>>
+bas--|>ct
+ah--|>ct
+am--|>ct
+dd--|>ge
+at--|>ge
+pp-[dashed]->im :<<extend>>
+mc---->maj
+mc-->pp
+ge-[dashed]->ab

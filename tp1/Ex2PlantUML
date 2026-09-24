@@ -1,0 +1,20 @@
+left to right direction
+actor User as u
+rectangle SysElevator {
+usecase Call as ca
+usecase "Choose Stage" as cs
+usecase "Show Message" as sm
+usecase "Close Door" as c
+usecase "Open Door" as o
+usecase "Move Elevator" as me
+}
+u--->ca
+u--->cs
+ca-[dashed]->sm :<<include>>
+cs-[dashed]->sm :<<include>>
+ca-[dashed]->o :<<include>>
+cs-[dashed]->c :<<include>>
+cs-[dashed]->me :<<include>>
+c-[dashed]->me :<<include>>
+me-[dashed]->o :<<include>>
+sm<-[dashed]-o :<<include>>
