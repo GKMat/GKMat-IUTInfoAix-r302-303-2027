@@ -1,6 +1,0 @@
-1. - arbre généalogique
-   - organisation de fichier
-   -structure d'un programme
-3. Préfixé : racine -> gauche -> droite
-   Infixe : gauche -> racine -> droite
-4. Parcour préfixé
